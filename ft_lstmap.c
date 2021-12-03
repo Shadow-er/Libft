@@ -6,13 +6,12 @@
 /*   By: mlakhssa <mlakhssa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:41:21 by mlakhssa          #+#    #+#             */
-/*   Updated: 2021/11/11 07:45:47 by mlakhssa         ###   ########.fr       */
+/*   Updated: 2021/12/03 11:20:50 by mlakhssa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 #include<stdlib.h>
-#include<stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

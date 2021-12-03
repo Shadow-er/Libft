@@ -6,13 +6,13 @@
 /*   By: mlakhssa <mlakhssa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 08:14:28 by mlakhssa          #+#    #+#             */
-/*   Updated: 2021/12/03 10:34:36 by mlakhssa         ###   ########.fr       */
+/*   Updated: 2021/12/03 11:36:58 by mlakhssa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	isset(char str, char Setter)
+static int	ft_isset(char str, char Setter)
 {
 	if (Setter == str)
 		return (1);
@@ -28,11 +28,11 @@ static int	nbrlen(char *str, char charset)
 	l = 0;
 	while (str[i])
 	{
-		while (isset(str[i], charset) == 1)
+		while (ft_isset(str[i], charset) == 1)
 			i++;
 		if (str[i])
 			l++;
-		while (isset(str[i], charset) == 0 && str[i])
+		while (ft_isset(str[i], charset) == 0 && str[i])
 			i++;
 	}
 	return (l);
@@ -43,7 +43,7 @@ static int	wl(char *str, char charset)
 	int	j;
 
 	j = 0;
-	while (str[j] && isset(str[j], charset) == 0)
+	while (str[j] && ft_isset(str[j], charset) == 0)
 		j++;
 	return (j);
 }
@@ -56,7 +56,7 @@ static char	**ft_fill(char *str, char charset, int k, char **s)
 	i = 0;
 	while (str[i])
 	{
-		while (isset(str[i], charset) == 1)
+		while (ft_isset(str[i], charset) == 1)
 			i++;
 		if (str[i])
 		{
@@ -68,7 +68,7 @@ static char	**ft_fill(char *str, char charset, int k, char **s)
 					free(s[j++]);
 				return (0);
 			}
-			while (str[i] && isset(str[i], charset) == 0)
+			while (str[i] && ft_isset(str[i], charset) == 0)
 				s[k][j++] = str[i++];
 			s[k++][j] = '\0';
 		}
@@ -82,14 +82,14 @@ char	**ft_split(char *str, char charset)
 	char	**bigm;
 	int		i;
 
-	if (str == '\0')
+	if (!str)
 		return (0);
 	i = nbrlen(str, charset);
 	bigm = (char **)malloc((i + 1) * (sizeof(char *)));
 	if (bigm == 0)
 		return (0);
 	ft_fill(str, charset, 0, bigm);
-	if (!ft_fill(str,charset, 0,bigm))
+	if (!bigm)
 	{
 		free(bigm);
 		return (NULL);

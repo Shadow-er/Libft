@@ -6,10 +6,9 @@
 /*   By: mlakhssa <mlakhssa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:50:37 by mlakhssa          #+#    #+#             */
-/*   Updated: 2021/12/03 10:42:40 by mlakhssa         ###   ########.fr       */
+/*   Updated: 2021/12/03 11:38:06 by mlakhssa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
