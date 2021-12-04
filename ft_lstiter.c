@@ -6,7 +6,7 @@
 /*   By: mlakhssa <mlakhssa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:38:40 by mlakhssa          #+#    #+#             */
-/*   Updated: 2021/12/03 10:30:01 by mlakhssa         ###   ########.fr       */
+/*   Updated: 2021/12/04 08:08:28 by mlakhssa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == 0  || f == 0)
+	if (lst == 0 || f == 0)
 		return ;
 	while (lst)
 	{
